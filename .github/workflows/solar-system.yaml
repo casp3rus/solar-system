@@ -228,7 +228,7 @@ jobs:
             echo "APP_INGRESS_HOST=$(kubectl -n ${{ vars.NAMESPACE }} get ingress -o jsonpath="{.items[0].spec.tls[0].hosts[0]}")"
 
     dev-integration-testing:
-      name: Dev Integration Testing
+      name: Development Integration Testing
       if: contains(github.ref, 'feature/')
       needs: dev-deploy
       runs-on: ubuntu-latest
