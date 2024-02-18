@@ -166,10 +166,16 @@ jobs:
         - name: Checkout Repo
           uses: actions/checkout@v4
         
-        - name: Install kubectl CLI
-          uses: azure/setup-kubectl@v3
-          with:
-            version: 'v1.26.0' # default is latest stable
+        # - name: Install kubectl CLI
+        #   uses: azure/setup-kubectl@v3
+        #   with:
+        #     version: 'v1.26.0' # default is latest stable
+        
+        # - name: Set Kubeconfig
+        #   uses: azure/k8s-set-context@v3
+        #   with:
+        #     method: kubeconfig
+        #     kubeconfig: ${{ secrets.KUBECONFIG }}
 
         - name: Fetch Kubernetes Cluster Details
           run: |
