@@ -42,7 +42,7 @@ jobs:
                 node-version: ${{ matrix.nodejs_version }}
 
             - name: Custom Action - Cache & Install NPM dependencies
-              uses: ./.github/custom-actions/npm-action/action.yaml
+              uses: ./custom-actions/npm-action/action.yaml
               with:
                 path-of-folder: node_modules
 
@@ -75,13 +75,13 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v4
   
-            - name: Setup NodeJS Version - 18
-              uses: actions/setup-node@v4
-              with:
-                node-version: 18
+            # - name: Setup NodeJS Version - 18
+            #   uses: actions/setup-node@v4
+            #   with:
+            #     node-version: 18
   
             - name: Custom Action - Cache & Install NPM dependencies
-              uses: ./.github/custom-actions/npm-action/action.yaml
+              uses: ./custom-actions/npm-action/action.yaml
               with:
                 path-of-folder: node_modules
   
